@@ -1,0 +1,139 @@
+/* =========================================================
+   ÉP TOÀN BỘ WEBSITE DÙNG TIMES NEW ROMAN
+   ========================================================= */
+
+:root {
+    --bs-body-font-family: "Times New Roman", Times, serif !important;
+    --bs-font-sans-serif: "Times New Roman", Times, serif !important;
+}
+
+html,
+body {
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 18px;
+    letter-spacing: normal !important;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+}
+
+    /* Tất cả thành phần hiển thị */
+    body *,
+    button,
+    input,
+    textarea,
+    select,
+    option,
+    label,
+    a,
+    p,
+    span,
+    div,
+    section,
+    article,
+    aside,
+    header,
+    footer,
+    nav,
+    main,
+    table,
+    thead,
+    tbody,
+    tr,
+    th,
+    td,
+    ul,
+    ol,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    code,
+    dialog {
+        font-family: "Times New Roman", Times, serif !important;
+        letter-spacing: normal !important;
+    }
+
+/* Ghi đè Bootstrap */
+.btn,
+.form-control,
+.form-select,
+.nav-link,
+.navbar-brand,
+.dropdown-item,
+.card,
+.card-title,
+.card-text,
+.alert,
+.modal,
+.modal-title,
+.modal-body {
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+/* Hộp thông báo kết nối lại của Blazor */
+#components-reconnect-modal,
+#components-reconnect-modal *,
+.components-reconnect-dialog,
+.components-reconnect-dialog * {
+    font-family: "Times New Roman", Times, serif !important;
+    letter-spacing: normal !important;
+}
+
+/* Các hộp thoại trình duyệt */
+dialog,
+dialog * {
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+/* Nút bấm */
+button,
+.btn {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* Ô nhập liệu */
+input,
+textarea,
+select,
+.form-control,
+.form-select {
+    font-size: 17px;
+}
+
+/* Nội dung */
+p,
+li,
+td,
+th {
+    line-height: 1.6;
+}
+
+/* Tiêu đề */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+
+/* Trên điện thoại */
+@media (max-width: 768px) {
+    html,
+    body {
+        font-size: 16px;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+        font-size: 16px;
+    }
+}

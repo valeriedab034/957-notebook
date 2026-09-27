@@ -1,0 +1,383 @@
+/* =========================================================
+   THIẾT LẬP CHUNG
+   ========================================================= */
+
+.preparation-page,
+.preparation-page * {
+    box-sizing: border-box;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+.preparation-page {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 42px 65px;
+    color: #191919;
+    line-height: 1.65;
+    background: #f7f4ee;
+    scroll-behavior: smooth;
+}
+
+/* =========================================================
+   PHẦN ĐẦU
+   ========================================================= */
+
+.preparation-hero {
+    padding: 48px 0 40px;
+    border-bottom: 1px solid #c9c0ae;
+}
+
+.segment-label,
+.eyebrow,
+.conclusion-label {
+    margin: 0 0 12px;
+    color: #7c1f26;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.preparation-hero h1 {
+    max-width: 960px;
+    margin: 0;
+    color: #151515;
+    font-size: clamp(3rem, 7vw, 6.2rem);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+}
+
+.hero-description {
+    max-width: 950px;
+    margin: 31px 0 0;
+    color: #4b4842;
+    font-size: 1.23rem;
+    line-height: 1.75;
+}
+
+.general-notice,
+.important-note {
+    margin: 32px 0;
+    padding: 20px 24px;
+    border-left: 6px solid #a06e20;
+    background: #eee4d1;
+    color: #342c21;
+    font-size: 1.08rem;
+}
+
+/* =========================================================
+   ĐIỀU HƯỚNG
+   ========================================================= */
+
+.page-navigation {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+    margin: 38px 0 70px;
+}
+
+    .page-navigation a {
+        display: flex;
+        min-height: 60px;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 16px;
+        border: 1px solid #233555;
+        border-radius: 4px;
+        background: #233555;
+        color: #ffffff;
+        font-size: 1.04rem;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        transition: 0.2s ease;
+    }
+
+        .page-navigation a:nth-child(even) {
+            border-color: #7d252b;
+            background: #7d252b;
+        }
+
+        .page-navigation a:hover,
+        .page-navigation a:focus {
+            background: #ffffff;
+            color: #171717;
+            transform: translateY(-2px);
+        }
+
+/* =========================================================
+   TIÊU ĐỀ PHẦN
+   ========================================================= */
+
+.content-section {
+    margin-bottom: 82px;
+    scroll-margin-top: 24px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    gap: 28px;
+    margin-bottom: 25px;
+}
+
+.large-number {
+    min-width: 112px;
+    color: #b49a69;
+    font-size: 5.4rem;
+    font-weight: 700;
+    line-height: 0.8;
+}
+
+.eyebrow {
+    margin-bottom: 6px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    color: #18243c;
+    font-size: clamp(2.2rem, 4vw, 3.7rem);
+    line-height: 1.05;
+}
+
+.section-introduction {
+    max-width: 1050px;
+    margin: 0 0 30px 140px;
+    color: #4c4943;
+    font-size: 1.14rem;
+}
+
+/* =========================================================
+   THẺ CHUẨN BỊ
+   ========================================================= */
+
+.preparation-grid,
+.training-grid,
+.subjects-grid,
+.discipline-grid {
+    display: grid;
+    gap: 19px;
+}
+
+.preparation-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.training-grid,
+.subjects-grid,
+.discipline-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.preparation-card,
+.training-card,
+.subject-card,
+.discipline-card {
+    padding: 26px;
+    border: 1px solid #d3cabb;
+    background: #ffffff;
+    box-shadow: 0 8px 22px rgba(35, 30, 24, 0.07);
+}
+
+.preparation-card {
+    border-top: 6px solid #253755;
+}
+
+.training-card {
+    border-top: 6px solid #7c1f26;
+}
+
+.subject-card {
+    border-top: 6px solid #3f6949;
+}
+
+.discipline-card {
+    border-top: 6px solid #a06e20;
+}
+
+.card-number,
+.training-card > span,
+.subject-card > span {
+    color: #b49a69;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.preparation-card h3,
+.training-card h3,
+.subject-card h3,
+.discipline-card h3 {
+    margin: 8px 0 13px;
+    color: #18243c;
+    font-size: 1.4rem;
+}
+
+.preparation-card ul {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.preparation-card li {
+    margin-bottom: 10px;
+}
+
+    .preparation-card li::marker {
+        color: #7c1f26;
+    }
+
+.training-card p,
+.subject-card p,
+.discipline-card p {
+    margin: 0;
+    color: #48443d;
+}
+
+/* =========================================================
+   DANH SÁCH KIỂM TRA
+   ========================================================= */
+
+.checklist {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+}
+
+    .checklist label {
+        display: flex;
+        min-height: 66px;
+        align-items: center;
+        gap: 14px;
+        padding: 15px 18px;
+        border: 1px solid #d1c7b5;
+        background: #ffffff;
+        cursor: pointer;
+    }
+
+    .checklist input {
+        width: 21px;
+        height: 21px;
+        flex: 0 0 21px;
+        accent-color: #7c1f26;
+    }
+
+/* =========================================================
+   KẾT LUẬN
+   ========================================================= */
+
+.preparation-conclusion {
+    margin-top: 65px;
+    padding: 47px;
+    background: #18243c;
+    color: #ffffff;
+}
+
+    .preparation-conclusion .conclusion-label {
+        color: #d9bd87;
+    }
+
+    .preparation-conclusion h2 {
+        max-width: 1000px;
+        margin: 0;
+        color: #ffffff;
+        font-size: clamp(2.1rem, 4vw, 3.5rem);
+        line-height: 1.1;
+    }
+
+    .preparation-conclusion p:last-child {
+        max-width: 940px;
+        margin: 23px 0 0;
+        color: #e5e8ee;
+        font-size: 1.12rem;
+    }
+
+/* =========================================================
+   MÀN HÌNH CỠ VỪA
+   ========================================================= */
+
+@media (max-width: 1120px) {
+    .page-navigation {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .training-grid,
+    .subjects-grid,
+    .discipline-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================================================
+   MÁY TÍNH BẢNG
+   ========================================================= */
+
+@media (max-width: 820px) {
+    .preparation-page {
+        padding: 23px 20px 48px;
+    }
+
+    .page-navigation,
+    .preparation-grid,
+    .checklist {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .large-number {
+        min-width: 76px;
+        font-size: 4rem;
+    }
+
+    .section-introduction {
+        margin-left: 0;
+    }
+}
+
+/* =========================================================
+   ĐIỆN THOẠI
+   ========================================================= */
+
+@media (max-width: 580px) {
+    .preparation-page {
+        padding: 18px 14px 38px;
+    }
+
+    .preparation-hero {
+        padding-top: 30px;
+    }
+
+        .preparation-hero h1 {
+            font-size: 2.8rem;
+        }
+
+    .hero-description {
+        font-size: 1.05rem;
+    }
+
+    .page-navigation,
+    .preparation-grid,
+    .training-grid,
+    .subjects-grid,
+    .discipline-grid,
+    .checklist {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .large-number {
+        display: block;
+        margin-bottom: 22px;
+    }
+
+    .preparation-conclusion {
+        padding: 30px 22px;
+    }
+}

@@ -1,0 +1,382 @@
+.home-page,
+.home-page * {
+    box-sizing: border-box;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+.home-page {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 34px 28px 60px;
+    color: #172033;
+}
+
+/* =========================================================
+   PHẦN GIỚI THIỆU
+   ========================================================= */
+
+.home-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+    align-items: center;
+    min-height: 540px;
+    padding: 60px;
+    overflow: hidden;
+    background: linear-gradient( 135deg, #172033 0%, #253354 65%, #8b0000 160% );
+    border-radius: 18px;
+    color: white;
+    box-shadow: 0 18px 45px rgba(22, 32, 51, 0.2);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-label,
+.section-label {
+    margin: 0 0 15px;
+    color: #e6ca6e;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px !important;
+}
+
+.home-hero h1 {
+    margin: 0;
+    color: white;
+    font-size: clamp(58px, 8vw, 100px);
+    font-weight: 700;
+    line-height: 0.95;
+}
+
+.hero-description {
+    max-width: 750px;
+    margin: 30px 0 0;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.hero-purpose {
+    max-width: 750px;
+    margin: 18px 0 0;
+    color: #e4e8f0;
+    font-size: 19px;
+    line-height: 1.65;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 34px;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    padding: 14px 22px;
+    border: 2px solid #e6ca6e;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.primary-button {
+    background-color: #e6ca6e;
+    color: #172033;
+}
+
+.secondary-button {
+    background-color: transparent;
+    color: white;
+}
+
+    .primary-button:hover,
+    .secondary-button:hover {
+        background-color: white;
+        border-color: white;
+        color: #8b0000;
+        transform: translateY(-2px);
+    }
+
+.hero-number {
+    position: relative;
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.09);
+    font-size: clamp(140px, 22vw, 290px);
+    font-weight: 700;
+    line-height: 1;
+    text-align: right;
+}
+
+/* =========================================================
+   BỐ CỤC WEBSITE
+   ========================================================= */
+
+.website-structure {
+    padding-top: 75px;
+}
+
+.section-introduction {
+    max-width: 850px;
+}
+
+    .section-introduction h2,
+    .usage-section h2 {
+        margin: 0;
+        color: #172033;
+        font-size: 44px;
+        font-weight: 700;
+    }
+
+    .section-introduction > p:last-child {
+        margin-top: 17px;
+        color: #4b5563;
+        font-size: 20px;
+        line-height: 1.65;
+    }
+
+.section-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.section-card {
+    display: grid;
+    grid-template-columns: 85px minmax(0, 1fr);
+    gap: 20px;
+    min-height: 235px;
+    padding: 28px;
+    background: white;
+    border: 1px solid #ded8cb;
+    border-top: 5px solid #172033;
+    border-radius: 10px;
+    color: inherit;
+    box-shadow: 0 9px 26px rgba(22, 32, 51, 0.08);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.available-card:hover {
+    color: inherit;
+    border-top-color: #8b0000;
+    box-shadow: 0 14px 35px rgba(22, 32, 51, 0.14);
+    transform: translateY(-4px);
+}
+
+.card-number {
+    color: #c5a74d;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.card-status {
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.2px !important;
+}
+
+.completed {
+    color: #287744;
+}
+
+.preparing {
+    color: #a26300;
+}
+
+.waiting {
+    color: #6b7280;
+}
+
+.card-content h3 {
+    margin: 0;
+    color: #172033;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.card-content > p:not(.card-status) {
+    margin: 13px 0 0;
+    color: #4b5563;
+    font-size: 17px;
+    line-height: 1.55;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 17px;
+    color: #8b0000;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   CÁCH SỬ DỤNG
+   ========================================================= */
+
+.usage-section {
+    margin-top: 75px;
+    padding: 48px;
+    background-color: #f3efe6;
+    border-radius: 14px;
+}
+
+    .usage-section .section-label {
+        color: #8b0000;
+    }
+
+.usage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 32px;
+}
+
+    .usage-grid article {
+        padding: 25px;
+        background: white;
+        border-radius: 8px;
+    }
+
+    .usage-grid span {
+        color: #c5a74d;
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .usage-grid h3 {
+        margin: 10px 0 8px;
+        color: #172033;
+        font-size: 26px;
+    }
+
+    .usage-grid p {
+        margin: 0;
+        color: #4b5563;
+        font-size: 17px;
+        line-height: 1.55;
+    }
+
+/* =========================================================
+   LƯU Ý CUỐI TRANG
+   ========================================================= */
+
+.home-notice {
+    margin-top: 45px;
+    padding: 34px 38px;
+    background-color: #8b0000;
+    border-radius: 10px;
+    color: white;
+}
+
+    .home-notice h2 {
+        margin: 0 0 12px;
+        color: white;
+        font-size: 30px;
+    }
+
+    .home-notice p {
+        max-width: 950px;
+        margin: 0;
+        color: white;
+        font-size: 18px;
+        line-height: 1.65;
+    }
+
+/* =========================================================
+   MÁY TÍNH BẢNG
+   ========================================================= */
+
+@media (max-width: 950px) {
+    .home-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .hero-number {
+        position: absolute;
+        right: 30px;
+        bottom: 5px;
+    }
+
+    .section-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .usage-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   ĐIỆN THOẠI
+   ========================================================= */
+
+@media (max-width: 650px) {
+    .home-page {
+        padding: 18px 14px 40px;
+    }
+
+    .home-hero {
+        padding: 38px 24px;
+    }
+
+        .home-hero h1 {
+            font-size: 58px;
+        }
+
+    .hero-description {
+        font-size: 21px;
+    }
+
+    .hero-purpose {
+        font-size: 17px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-number {
+        display: none;
+    }
+
+    .section-introduction h2,
+    .usage-section h2 {
+        font-size: 34px;
+    }
+
+    .section-card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 24px;
+    }
+
+    .card-number {
+        font-size: 40px;
+    }
+
+    .usage-section {
+        padding: 32px 22px;
+    }
+
+    .home-notice {
+        padding: 28px 22px;
+    }
+}

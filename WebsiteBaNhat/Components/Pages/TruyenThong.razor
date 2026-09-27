@@ -1,0 +1,517 @@
+﻿@page "/truyen-thong"
+@using WebsiteBaNhat.Models
+@using WebsiteBaNhat.Services
+@inject TraditionService TraditionService
+
+<PageTitle>957 Notebook - Lời thề, điều răn dạy</PageTitle>
+
+<section class="tradition-hero">
+    <div class="hero-content">
+        <p class="eyebrow">PHÂN ĐOẠN 01</p>
+
+        <h1>Lời thề, điều răn dạy</h1>
+
+        <p class="hero-description">
+            Tìm hiểu nguyên văn, nguồn gốc lịch sử và ý nghĩa thực tiễn
+            của Năm lời thề danh dự cùng Sáu điều Chủ tịch Hồ Chí Minh
+            dạy Công an nhân dân.
+        </p>
+    </div>
+
+    <div class="hero-time">
+        <strong>Chặng đường 81 năm của ngành CAND</strong>
+
+        <span>
+            Một mạch nguồn lịch sử được tiếp nối bằng quá trình
+            học tập và rèn luyện mỗi ngày.
+        </span>
+    </div>
+</section>
+
+<section class="tab-container">
+    <button type="button"
+            class="tab-button @(activeTab == TraditionTab.Oaths ? "active" : "")"
+            @onclick="() => SelectTab(TraditionTab.Oaths)">
+
+        <span class="tab-number">05</span>
+
+        <span class="tab-text">
+            <strong>Năm lời thề danh dự</strong>
+            <small>Quyết định số 09/2008/QĐ-BCA(X11)</small>
+        </span>
+    </button>
+
+    <button type="button"
+            class="tab-button @(activeTab == TraditionTab.Teachings ? "active" : "")"
+            @onclick="() => SelectTab(TraditionTab.Teachings)">
+
+        <span class="tab-number">06</span>
+
+        <span class="tab-text">
+            <strong>Sáu điều Bác Hồ dạy CAND</strong>
+            <small>Trích thư ngày 11/3/1948</small>
+        </span>
+    </button>
+</section>
+
+<section class="content-section">
+    <div class="content-heading">
+        <div>
+            <p class="eyebrow">@CurrentEyebrow</p>
+            <h2>@CurrentTitle</h2>
+            <p>@CurrentIntroduction</p>
+        </div>
+
+        <div class="reading-progress">
+            <span>ĐÃ ĐỌC</span>
+
+            <strong>
+                @ReadCount/@CurrentItems.Count
+            </strong>
+
+            <div class="progress-background">
+                <div class="progress-value"
+                     style="@($"width: {ProgressPercent}%")">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (activeTab == TraditionTab.Oaths)
+    {
+        <aside class="history-note red-note">
+            <strong>Phân biệt hai lớp lịch sử</strong>
+
+            <p>
+                Năm lời thề trong Điếu văn năm 1969 là nguồn gốc lịch sử.
+                Phần nguyên văn bên dưới sử dụng Năm lời thề danh dự theo
+                Quyết định số 09/2008/QĐ-BCA(X11) ngày 03/01/2008.
+            </p>
+        </aside>
+    }
+    else
+    {
+        <aside class="history-note gold-note">
+            <strong>Hoàn cảnh ra đời</strong>
+
+            <p>
+                Sáu điều được trích từ thư Chủ tịch Hồ Chí Minh gửi
+                đồng chí Hoàng Mai, Giám đốc Công an Khu XII,
+                ngày 11/3/1948.
+            </p>
+        </aside>
+    }
+
+    <div class="item-list">
+        @foreach (TraditionItem item in CurrentItems)
+        {
+            string key = GetItemKey(item.Number);
+            bool isExpanded = expandedItems.Contains(key);
+            bool isRead = readItems.Contains(key);
+
+            <article class="tradition-card
+                            @(isExpanded ? "expanded" : "")
+                            @(isRead ? "read" : "")">
+
+                <button type="button"
+                        class="card-header"
+                        aria-expanded="@isExpanded"
+                        @onclick="() => ToggleItem(key)">
+
+                    <span class="card-number">
+                        @item.Number.ToString("00")
+                    </span>
+
+                    <span class="card-title">
+                        <small>
+                            @GetItemHeading(item)
+                        </small>
+
+                        <strong>
+                            @GetItemTitle(item)
+                        </strong>
+                    </span>
+
+                    <span class="expand-symbol">
+                        @(isExpanded ? "−" : "+")
+                    </span>
+                </button>
+
+                @if (isExpanded)
+                {
+                    <div class="card-body">
+                        @if (activeTab == TraditionTab.Oaths)
+                        {
+                            <blockquote>
+                                @item.OriginalText
+                            </blockquote>
+                        }
+
+                        <div class="explanation-grid">
+                            <div>
+                                <span class="explanation-label">
+                                    Ý nghĩa cốt lõi
+                                </span>
+
+                                <p>@item.Meaning</p>
+                            </div>
+
+                            <div>
+                                <span class="explanation-label">
+                                    Liên hệ với học viên
+                                </span>
+
+                                <p>@item.StudentApplication</p>
+                            </div>
+                        </div>
+
+                        <label class="read-checkbox">
+                            <input type="checkbox"
+                                   checked="@isRead"
+                                   @onchange="eventArgs =>
+                                       ChangeReadStatus(
+                                           key,
+                                           eventArgs.Value is true)" />
+
+                            <span>
+                                Tôi đã đọc và hiểu nội dung này
+                            </span>
+                        </label>
+                    </div>
+                }
+            </article>
+        }
+    </div>
+
+    @if (ReadCount == CurrentItems.Count)
+    {
+        <div class="completion-box">
+            <span class="completion-icon">✓</span>
+
+            <div>
+                <strong>Bạn đã hoàn thành phần này</strong>
+
+                <p>
+                    Hãy tiếp tục đối chiếu từng nội dung với việc
+                    học tập và rèn luyện hằng ngày.
+                </p>
+            </div>
+        </div>
+    }
+</section>
+
+<section class="history-section" id="lich-su">
+    <div class="section-title">
+        <p class="eyebrow">DÒNG THỜI GIAN</p>
+        <h2>Ba dấu mốc cần ghi nhớ</h2>
+
+        <p>
+            Mốc năm 1969 giải thích nguồn gốc lịch sử;
+            mốc năm 2008 là căn cứ trực tiếp của bản Năm lời thề
+            danh dự của CAND Việt Nam. 
+        </p>
+    </div>
+
+    <div class="timeline">
+        <article class="timeline-item">
+            <time>11/3/1948</time>
+
+            <div>
+                <h3>
+                    Sáu điều về tư cách người Công an cách mệnh
+                </h3>
+
+                <p>
+                    Chủ tịch Hồ Chí Minh gửi thư cho đồng chí
+                    Hoàng Mai, Giám đốc Công an Khu XII.
+                    Trong thư, Người nêu sáu điều về tư cách
+                    người Công an cách mệnh.
+                </p>
+            </div>
+        </article>
+
+        <article class="timeline-item">
+            <time>08/9/1969</time>
+
+            <div>
+                <h3>Năm lời thề thiêng liêng</h3>
+
+                <p>
+                    Tại Lễ truy điệu Chủ tịch Hồ Chí Minh của
+                    Đảng đoàn Bộ Công an, Bộ trưởng Trần Quốc Hoàn
+                    đọc điếu văn có năm lời thề của toàn lực lượng.
+                </p>
+            </div>
+        </article>
+
+        <article class="timeline-item">
+            <time>03/01/2008</time>
+
+            <div>
+                <h3>Năm lời thề danh dự được quy định lại</h3>
+
+                <p>
+                    Quyết định số 09/2008/QĐ-BCA(X11) của
+                    Bộ trưởng Bộ Công an là căn cứ của nội dung
+                    Năm lời thề được giới thiệu trên website.
+                </p>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="source-section" id="nguon">
+    <div class="section-title">
+        <p class="eyebrow">ĐỐI CHIẾU NỘI DUNG</p>
+        <h2>Nguồn tài liệu</h2>
+    </div>
+
+    <ol class="source-list">
+        <li>
+            <span>01</span>
+
+            <div>
+                <strong>
+                    Quyết định số 09/2008/QĐ-BCA(X11)
+                </strong>
+
+                <p>
+                    Quyết định ngày 03/01/2008 của Bộ trưởng
+                    Bộ Công an, là căn cứ trực tiếp của
+                    Năm lời thề danh dự được trình bày.
+                </p>
+            </div>
+        </li>
+
+        <li>
+            <span>02</span>
+
+            <div>
+                <strong>
+                    Năm lời thề thiêng liêng trước anh linh
+                    Chủ tịch Hồ Chí Minh
+                </strong>
+
+                <p>
+                    Bài viết dẫn nguồn Điếu văn của Đảng đoàn
+                    Bộ Công an năm 1969, tài liệu lưu tại
+                    Bảo tàng Công an nhân dân.
+                </p>
+
+                <a target="_blank"
+                   rel="noopener noreferrer"
+                   href="https://dhannd.bocongan.gov.vn/nam-loi-the-thieng-lieng-truoc-anh-linh-chu-tich-ho-chi-minh-nguon-suc-manh-to-lon-cua-luc-luong-cong-an-nhan-dan-trong-su-nghiep-bao-ve-an-ninh-to-quoc-a-1398">
+
+                    Mở nguồn tham khảo ↗
+                </a>
+            </div>
+        </li>
+
+        <li>
+            <span>03</span>
+
+            <div>
+                <strong>
+                    75 năm CAND học tập, thực hiện
+                    Sáu điều Bác Hồ dạy
+                </strong>
+
+                <p>
+                    Bài viết của Bộ Công an xác định mốc
+                    ngày 11/3/1948 và hoàn cảnh Bác gửi thư
+                    cho đồng chí Hoàng Mai.
+                </p>
+
+                <a target="_blank"
+                   rel="noopener noreferrer"
+                   href="https://bocongan.gov.vn/bai-viet/75-nam-cong-an-nhan-dan-hoc-tap-thuc-hien-sau-dieu-day-va-huong-ung-loi-keu-goi-thi-dua-ai-quoc-cua-chu-tich-ho-chi-minh-d2-t35196">
+
+                    Mở nguồn tham khảo ↗
+                </a>
+            </div>
+        </li>
+    </ol>
+</section>
+
+@code {
+    private TraditionTab activeTab = TraditionTab.Oaths;
+
+    private List<TraditionItem> fiveOaths = new();
+    private List<TraditionItem> sixTeachings = new();
+
+    // Lưu những thẻ đang mở.
+    private readonly HashSet<string> expandedItems = new();
+
+    // Lưu những nội dung đã được người dùng đánh dấu đã đọc.
+    private readonly HashSet<string> readItems = new();
+
+    protected override void OnInitialized()
+    {
+        fiveOaths = TraditionService.GetFiveOaths();
+        sixTeachings = TraditionService.GetSixTeachings();
+
+        // Mở sẵn mục đầu tiên.
+        expandedItems.Add("oath-1");
+    }
+
+    private IReadOnlyList<TraditionItem> CurrentItems
+    {
+        get
+        {
+            return activeTab == TraditionTab.Oaths
+                ? fiveOaths
+                : sixTeachings;
+        }
+    }
+
+    private string CurrentEyebrow
+    {
+        get
+        {
+            return activeTab == TraditionTab.Oaths
+                ? "DANH DỰ VÀ TRÁCH NHIỆM"
+                : "TƯ CÁCH NGƯỜI CÔNG AN CÁCH MỆNH";
+        }
+    }
+
+    private string CurrentTitle
+    {
+        get
+        {
+            return activeTab == TraditionTab.Oaths
+                ? "Năm lời thề danh dự của CAND Việt Nam"
+                : "Sáu điều Chủ tịch Hồ Chí Minh dạy CAND";
+        }
+    }
+
+    private string CurrentIntroduction
+    {
+        get
+        {
+            return activeTab == TraditionTab.Oaths
+                ? "Mỗi lời thề là một cam kết về lòng trung thành, " +
+                  "kỷ luật, trách nhiệm phục vụ Nhân dân và quá trình " +
+                  "tự rèn luyện suốt đời."
+
+                : "Sáu lời dạy bao quát từ việc tự rèn mình đến quan hệ " +
+                  "với đồng sự, Chính phủ, Nhân dân, công việc và " +
+                  "đối tượng đấu tranh.";
+        }
+    }
+
+    private int ReadCount
+    {
+        get
+        {
+            return CurrentItems.Count(
+                item => readItems.Contains(
+                    GetItemKey(item.Number)));
+        }
+    }
+
+    private int ProgressPercent
+    {
+        get
+        {
+            if (CurrentItems.Count == 0)
+            {
+                return 0;
+            }
+
+            return ReadCount * 100 / CurrentItems.Count;
+        }
+    }
+
+    private void SelectTab(TraditionTab selectedTab)
+    {
+        activeTab = selectedTab;
+
+        string firstItemKey = GetItemKey(1);
+
+        // Nếu chưa có thẻ nào của phần mới được mở,
+        // chương trình sẽ mở sẵn thẻ đầu tiên.
+        bool hasExpandedItem = expandedItems.Any(
+            key => key.StartsWith(
+                CurrentPrefix,
+                StringComparison.Ordinal));
+
+        if (!hasExpandedItem)
+        {
+            expandedItems.Add(firstItemKey);
+        }
+    }
+
+    private string CurrentPrefix
+    {
+        get
+        {
+            return activeTab == TraditionTab.Oaths
+                ? "oath-"
+                : "teaching-";
+        }
+    }
+
+    private string GetItemKey(int number)
+    {
+        return CurrentPrefix + number;
+    }
+
+    private void ToggleItem(string key)
+    {
+        if (!expandedItems.Add(key))
+        {
+            expandedItems.Remove(key);
+        }
+    }
+
+    private void ChangeReadStatus(string key, bool isRead)
+    {
+        if (isRead)
+        {
+            readItems.Add(key);
+        }
+        else
+        {
+            readItems.Remove(key);
+        }
+    }
+
+    private string GetItemHeading(TraditionItem item)
+    {
+        if (activeTab == TraditionTab.Oaths)
+        {
+            return "Lời thề thứ " +
+                   ConvertNumberToVietnamese(item.Number);
+        }
+
+        return "Điều thứ " +
+               ConvertNumberToVietnamese(item.Number);
+    }
+
+    private string GetItemTitle(TraditionItem item)
+    {
+        return activeTab == TraditionTab.Oaths
+            ? item.ShortTitle
+            : item.OriginalText;
+    }
+
+    private string ConvertNumberToVietnamese(int number)
+    {
+        return number switch
+        {
+            1 => "nhất",
+            2 => "hai",
+            3 => "ba",
+            4 => "tư",
+            5 => "năm",
+            6 => "sáu",
+            _ => number.ToString()
+        };
+    }
+
+    private enum TraditionTab
+    {
+        Oaths,
+        Teachings
+    }
+}

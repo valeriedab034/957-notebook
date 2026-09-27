@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>957 Notebook</title>
+
+    <base href="/" />
+
+    <!-- Bootstrap tải trước -->
+    <link rel="stylesheet"
+          href="lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- CSS của chúng ta tải sau để ghi đè font Bootstrap -->
+    <link rel="stylesheet"
+          href="app.css" />
+
+    <!-- Không đổi WebsiteBaNhat ở dòng này -->
+    <link rel="stylesheet"
+          href="WebsiteBaNhat.styles.css" />
+
+    <link rel="icon"
+          type="image/png"
+          href="favicon.png" />
+
+    <HeadOutlet @rendermode="InteractiveServer" />
+</head>
+
+<body>
+    <Routes @rendermode="InteractiveServer" />
+
+    <script src="_framework/blazor.web.js"></script>
+</body>
+
+</html>

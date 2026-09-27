@@ -1,0 +1,178 @@
+/* =========================================================
+   PHẦN ĐẦU MENU
+   ========================================================= */
+
+.top-row {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.navbar-brand {
+    margin: 0;
+    color: white;
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 25px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+    .navbar-brand:hover {
+        color: #f1d57a;
+    }
+
+/* =========================================================
+   NÚT MỞ MENU TRÊN ĐIỆN THOẠI
+   ========================================================= */
+
+.navbar-toggler {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    width: 3.5rem;
+    height: 2.5rem;
+    appearance: none;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    background-image: url( "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e" );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.75rem;
+}
+
+    .navbar-toggler:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .navbar-toggler:checked {
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+
+/* =========================================================
+   KHU VỰC CUỘN MENU
+   ========================================================= */
+
+.nav-scrollable {
+    display: none;
+    padding-top: 0.75rem;
+}
+
+/* Khi nút menu được chọn thì hiện menu */
+.navbar-toggler:checked ~ .nav-scrollable {
+    display: block;
+}
+
+/* =========================================================
+   TỪNG MỤC MENU
+   ========================================================= */
+
+.nav-item {
+    padding-bottom: 0.6rem;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+    /*
+   NavLink tạo ra thẻ a nên phải dùng ::deep
+   khi viết trong file CSS cô lập của Blazor.
+*/
+    .nav-item ::deep a.nav-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        min-height: 3.4rem;
+        height: auto;
+        padding: 11px 14px;
+        color: #e8e8e8;
+        background: none;
+        border-radius: 7px;
+        font-family: "Times New Roman", Times, serif !important;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.25;
+        text-decoration: none;
+        white-space: normal;
+        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+        .nav-item ::deep a.nav-link:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.12);
+            transform: translateX(2px);
+        }
+
+        /* Mục trang đang được mở */
+        .nav-item ::deep a.nav-link.active {
+            color: white;
+            background-color: rgba(82, 92, 170, 0.85);
+        }
+
+/* =========================================================
+   KÝ HIỆU VÀ NỘI DUNG
+   ========================================================= */
+
+.menu-symbol {
+    display: inline-flex;
+    flex: 0 0 18px;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    min-width: 18px;
+    color: #e0c568;
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 14px;
+    line-height: 1;
+}
+
+/*
+   min-width: 0 giúp nội dung xuống dòng đúng bên phải
+   ký hiệu, không đẩy ký hiệu sang dòng riêng.
+*/
+.menu-text {
+    display: block;
+    flex: 1;
+    min-width: 0;
+    font-family: "Times New Roman", Times, serif !important;
+    line-height: 1.25;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+/* =========================================================
+   GIAO DIỆN MÁY TÍNH
+   ========================================================= */
+
+@media (min-width: 641px) {
+    .navbar-toggler {
+        display: none;
+    }
+
+    .nav-scrollable {
+        display: block;
+        height: calc(100vh - 4rem);
+        overflow-y: auto;
+    }
+}
+
+/* =========================================================
+   GIAO DIỆN ĐIỆN THOẠI
+   ========================================================= */
+
+@media (max-width: 640px) {
+    .top-row {
+        padding-right: 5rem;
+    }
+
+    .navbar-brand {
+        font-size: 22px;
+    }
+
+    .nav-item ::deep a.nav-link {
+        min-height: 3.2rem;
+        font-size: 17px;
+    }
+}

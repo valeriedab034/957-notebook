@@ -1,0 +1,755 @@
+﻿@page "/noi-vu-giuong"
+
+<PageTitle>Gọn nội vụ giường - 957 Notebook</PageTitle>
+
+<div class="noi-vu-page">
+    <header class="hero-section">
+        <div class="hero-content">
+            <p class="section-label">NỘI VỤ PHÒNG Ở</p>
+
+            <h1>Gọn nội vụ giường</h1>
+
+            <p class="hero-description">
+                Hướng dẫn các bước gấp chăn mùa hè và chăn mùa đông
+                theo hướng gọn gàng, vuông vắn, thuận tiện cho việc
+                sắp xếp và kiểm tra nội vụ phòng ở.
+            </p>
+
+            <div class="hero-tags">
+                <span>Chăn mùa hè</span>
+                <span>Chăn mùa đông</span>
+                <span>Kiểm tra nội vụ</span>
+            </div>
+        </div>
+
+        <aside class="hero-summary">
+            <span class="summary-number">02</span>
+            <strong>Kiểu nội vụ</strong>
+
+            <p>
+                Quy trình được chia thành hai phần riêng biệt,
+                phù hợp với đặc điểm của chăn mỏng mùa hè
+                và chăn có ruột dày sử dụng trong mùa đông.
+            </p>
+        </aside>
+    </header>
+
+    <nav class="page-navigation"
+         aria-label="Điều hướng trang gọn nội vụ">
+        <a href="#chuan-bi">Chuẩn bị</a>
+        <a href="#mua-he">Chăn mùa hè</a>
+        <a href="#mua-dong">Chăn mùa đông</a>
+        <a href="#kiem-tra">Kiểm tra</a>
+    </nav>
+
+    <main>
+        <section id="chuan-bi" class="content-section">
+            <div class="section-heading">
+                <span class="heading-number">01</span>
+
+                <div>
+                    <p class="eyebrow">TRƯỚC KHI THỰC HIỆN</p>
+                    <h2>Chuẩn bị dụng cụ và vị trí gấp</h2>
+                </div>
+            </div>
+
+            <div class="preparation-grid">
+                @foreach (PreparationItem item in PreparationItems)
+                {
+                    <article class="preparation-card">
+                        <span class="diamond-symbol"
+                              aria-hidden="true">
+                            ◆
+                        </span>
+
+                        <h3>@item.Title</h3>
+                        <p>@item.Description</p>
+                    </article>
+                }
+            </div>
+
+            <aside class="information-box">
+                <strong>Nguyên tắc chung:</strong>
+
+                <span>
+                    Chăn phải sạch, khô; mặt gấp phải bằng phẳng.
+                    Trước khi tạo nếp, cần dàn đều ruột chăn,
+                    xác định đúng chiều dài, chiều rộng và vị trí chính giữa.
+                </span>
+            </aside>
+        </section>
+
+        <section id="mua-he"
+                 class="content-section summer-section">
+            <div class="section-heading">
+                <span class="heading-number">02</span>
+
+                <div>
+                    <p class="eyebrow">NỘI VỤ MÙA HÈ</p>
+                    <h2>Cách gấp chăn mùa hè</h2>
+                </div>
+            </div>
+
+            <p class="section-introduction">
+                Chăn mùa hè thường mỏng và nhẹ hơn chăn mùa đông.
+                Khi gấp cần chú ý làm thẳng các cạnh, ép hết không khí,
+                giấu mép thừa và giữ khối chăn không bị xô lệch.
+            </p>
+
+            <div class="summer-notice">
+                <strong>Đặc điểm:</strong>
+
+                <span>
+                    Chăn mỏng dễ tạo nếp nhưng cũng dễ bị nhăn và bung.
+                    Vì vậy, cần vuốt phẳng sau mỗi lần gấp, không gấp
+                    liên tiếp khi các cạnh trước đó vẫn còn lệch.
+                </span>
+            </div>
+
+            <article class="winter-step-card">
+                <figure class="winter-figure">
+                    <video controls
+                           preload="metadata"
+                           playsinline
+                           style="display:block;
+                                  width:100%;
+                                  height:auto;
+                                  min-height:260px;
+                                  max-height:650px;
+                                  background:#111111;">
+                        <source src="/videos/11457.mp4"
+                                type="video/mp4" />
+
+                        Trình duyệt của bạn không hỗ trợ phát video HTML5.
+                    </video>
+
+                    <figcaption>
+                        <span class="ai-label">
+                            Video thực tế hướng dẫn gấp nội vụ mùa hè
+                        </span>
+
+                        <span>
+                            Có thể tạm dừng hoặc tua lại video để quan sát
+                            kỹ từng đường gấp và cách chỉnh các góc chăn.
+                        </span>
+                    </figcaption>
+                </figure>
+
+                <div class="winter-step-content">
+                    <span class="step-number">
+                        VIDEO HƯỚNG DẪN
+                    </span>
+
+                    <h3>Thực hành gấp chăn mùa hè</h3>
+
+                    <p class="step-summary">
+                        Video minh họa toàn bộ thao tác thực tế từ khi mở chăn,
+                        tạo các đường gấp cho đến khi chỉnh khối chăn hoàn thiện.
+                    </p>
+
+                    <ol>
+                        <li>
+                            Nhấn nút phát để xem toàn bộ quy trình một lần
+                            trước khi tự thực hiện.
+                        </li>
+
+                        <li>
+                            Ở lần xem thứ hai, tạm dừng tại từng đường gấp
+                            để xác định chiều và vị trí gấp.
+                        </li>
+
+                        <li>
+                            Quan sát cách người thực hiện dùng tay vuốt mặt chăn,
+                            giữ mép và chỉnh góc.
+                        </li>
+
+                        <li>
+                            Đối chiếu video với sáu bước hướng dẫn
+                            được trình bày phía dưới.
+                        </li>
+                    </ol>
+
+                    <div class="expected-result">
+                        <strong>Mục đích:</strong>
+
+                        <span>
+                            Giúp người xem hình dung chuyển động thực tế,
+                            thay vì chỉ quan sát hình mô phỏng tĩnh.
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <div class="summer-steps"
+                 style="margin-top:32px;">
+                @foreach (SummerStep step in SummerSteps)
+                {
+                    <article class="summer-step-card">
+                        <div class="summer-diagram @step.DiagramClass"
+                             aria-hidden="true">
+                            <div class="diagram-blanket">
+                                <span class="fold-line fold-line-one"></span>
+                                <span class="fold-line fold-line-two"></span>
+                                <span class="direction-arrow arrow-one">➜</span>
+                                <span class="direction-arrow arrow-two">➜</span>
+                            </div>
+                        </div>
+
+                        <div class="summer-step-content">
+                            <span class="step-number">
+                                BƯỚC @step.Number.ToString("00")
+                            </span>
+
+                            <h3>@step.Title</h3>
+                            <p>@step.Description</p>
+
+                            <ul>
+                                @foreach (string instruction in step.Instructions)
+                                {
+                                    <li>@instruction</li>
+                                }
+                            </ul>
+
+                            <div class="expected-result">
+                                <strong>Kết quả:</strong>
+                                <span>@step.ExpectedResult</span>
+                            </div>
+                        </div>
+                    </article>
+                }
+            </div>
+        </section>
+
+        <section id="mua-dong"
+                 class="content-section winter-section">
+            <div class="section-heading">
+                <span class="heading-number">03</span>
+
+                <div>
+                    <p class="eyebrow">NỘI VỤ MÙA ĐÔNG</p>
+                    <h2>Cách gấp chăn mùa đông</h2>
+                </div>
+            </div>
+
+            <p class="section-introduction">
+                Chăn mùa đông có phần ruột dày nằm bên trong vỏ chăn.
+                Quy trình sử dụng khuôn gỗ tạm thời để xác định kích thước,
+                tạo các nếp thẳng và giúp khối chăn vuông vắn hơn.
+            </p>
+
+            <aside class="warning-box">
+                <strong>Lưu ý về khuôn gỗ:</strong>
+
+                <span>
+                    Các tấm gỗ chỉ dùng để định hình tạm thời.
+                    Phải lấy toàn bộ khuôn gỗ ra trước khi khóa mép
+                    và hoàn thiện chăn. Không để tấm gỗ bên trong chăn.
+                </span>
+            </aside>
+
+            <div class="winter-steps">
+                @foreach (WinterStep step in WinterSteps)
+                {
+                    <article class="winter-step-card">
+                        <figure class="winter-figure">
+                            <img src="@step.ImageUrl"
+                                 alt="@step.ImageAlternative"
+                                 loading="lazy" />
+
+                            <figcaption>
+                                <span class="ai-label">
+                                    Hình minh họa được tạo bằng AI
+                                </span>
+
+                                <span>
+                                    Hình ảnh có tính chất mô phỏng thao tác,
+                                    phục vụ mục đích hướng dẫn trực quan.
+                                </span>
+                            </figcaption>
+                        </figure>
+
+                        <div class="winter-step-content">
+                            <span class="step-number">
+                                BƯỚC @step.Number.ToString("00")
+                            </span>
+
+                            <h3>@step.Title</h3>
+
+                            <p class="step-summary">
+                                @step.Summary
+                            </p>
+
+                            <ol>
+                                @foreach (string instruction in step.Instructions)
+                                {
+                                    <li>@instruction</li>
+                                }
+                            </ol>
+
+                            <div class="expected-result">
+                                <strong>Kết quả:</strong>
+                                <span>@step.ExpectedResult</span>
+                            </div>
+                        </div>
+                    </article>
+                }
+            </div>
+        </section>
+
+        <section id="kiem-tra"
+                 class="content-section inspection-section">
+            <div class="section-heading">
+                <span class="heading-number">04</span>
+
+                <div>
+                    <p class="eyebrow">HOÀN THIỆN NỘI VỤ</p>
+                    <h2>Tiêu chí tự kiểm tra</h2>
+                </div>
+            </div>
+
+            <div class="inspection-layout">
+                <div class="criteria-list">
+                    @foreach (string criterion in CompletionCriteria)
+                    {
+                        <div class="criterion-item">
+                            <span class="check-symbol"
+                                  aria-hidden="true">
+                                ✓
+                            </span>
+
+                            <span>@criterion</span>
+                        </div>
+                    }
+                </div>
+
+                <figure class="finished-example">
+                    <img src="/images/noi-vu-mua-dong/buoc-08-hoan-thien.png"
+                         alt="Minh họa chăn mùa đông sau khi hoàn thiện"
+                         loading="lazy" />
+
+                    <figcaption>
+                        <span class="ai-label">
+                            Hình minh họa được tạo bằng AI
+                        </span>
+
+                        <span>
+                            Mẫu tham khảo về hình dáng chăn sau khi hoàn thiện.
+                        </span>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="mistakes-grid">
+                @foreach (MistakeItem mistake in CommonMistakes)
+                {
+                    <article class="mistake-card">
+                        <h3>@mistake.Title</h3>
+                        <p>@mistake.Description</p>
+                    </article>
+                }
+            </div>
+
+            <aside class="reference-box">
+                <strong>Phạm vi tham khảo:</strong>
+
+                <span>
+                    Kích thước, vị trí đặt chăn và cách kiểm tra nội vụ
+                    có thể được điều chỉnh theo mẫu chăn, cơ sở vật chất
+                    và yêu cầu quản lý của từng trường hoặc đơn vị.
+                    Học viên cần thực hiện theo hướng dẫn trực tiếp
+                    của cán bộ quản lý tại nơi học tập, huấn luyện.
+                </span>
+            </aside>
+        </section>
+    </main>
+</div>
+
+@code {
+    private static readonly IReadOnlyList<PreparationItem> PreparationItems =
+        new List<PreparationItem>
+        {
+            new PreparationItem(
+                "Chăn cần gấp",
+                "Kiểm tra vỏ chăn, ruột chăn và các đường mép. Chăn phải sạch, khô, không bị xoắn hoặc dồn ruột sang một phía."),
+
+            new PreparationItem(
+                "Mặt phẳng sạch",
+                "Sử dụng mặt giường hoặc mặt sàn rộng, sạch và bằng phẳng. Loại bỏ vật sắc nhọn có thể làm rách chăn."),
+
+            new PreparationItem(
+                "Khuôn gỗ mùa đông",
+                "Chuẩn bị ba tấm gỗ phẳng, nhẵn và không có dằm. Khuôn chỉ cần dùng khi gấp chăn mùa đông theo phương pháp minh họa."),
+
+            new PreparationItem(
+                "Thước kiểm tra",
+                "Có thể sử dụng thước thẳng để kiểm tra cạnh và góc khi mới luyện tập. Không bắt buộc để thước trong chăn."),
+
+            new PreparationItem(
+                "Tay sạch, khô",
+                "Rửa và lau khô tay trước khi gấp. Không thực hiện khi tay dính nước, dầu hoặc bụi bẩn."),
+
+            new PreparationItem(
+                "Không gian thao tác",
+                "Bảo đảm có đủ khoảng trống để mở hoàn toàn chăn, di chuyển quanh các cạnh và quan sát toàn bộ hình dạng.")
+        };
+
+    private static readonly IReadOnlyList<SummerStep> SummerSteps =
+        new List<SummerStep>
+        {
+            new SummerStep(
+                1,
+                "Trải và vuốt phẳng chăn",
+                "summer-diagram-one",
+                "Mở hoàn toàn chăn mùa hè trên mặt giường hoặc mặt sàn sạch.",
+                new[]
+                {
+                    "Đặt mặt chăn cần trưng bày hướng xuống dưới.",
+                    "Kéo thẳng bốn góc và chỉnh chăn thành hình chữ nhật.",
+                    "Vuốt từ chính giữa ra các cạnh để loại bỏ nếp nhăn và không khí."
+                },
+                "Chăn được mở phẳng, bốn góc rõ ràng và các mép không bị cuộn."),
+
+            new SummerStep(
+                2,
+                "Gấp hai cạnh dài vào giữa",
+                "summer-diagram-two",
+                "Thu hẹp chiều ngang của chăn bằng hai nếp gấp song song.",
+                new[]
+                {
+                    "Gấp cạnh dài bên trái vào phía đường giữa của chăn.",
+                    "Vuốt thẳng nếp gấp từ đầu này sang đầu kia.",
+                    "Gấp cạnh dài bên phải vào trong với khoảng cách tương đương.",
+                    "Kiểm tra để hai phần gấp không chồng lệch quá nhiều."
+                },
+                "Chăn tạo thành một dải dài, hai cạnh bên thẳng và tương đối cân nhau."),
+
+            new SummerStep(
+                3,
+                "Gấp dải chăn theo chiều dọc",
+                "summer-diagram-three",
+                "Đưa hai mép dài lại gần nhau để tăng độ chắc cho dải chăn.",
+                new[]
+                {
+                    "Giữ cố định một đầu để dải chăn không xô lệch.",
+                    "Gấp một cạnh dài phủ lên phần còn lại.",
+                    "Miết dọc theo toàn bộ đường gấp.",
+                    "Ép nhẹ để dải chăn có chiều dày đồng đều."
+                },
+                "Dải chăn hẹp hơn, chắc hơn và không có phần mép bị lộ ra ngoài."),
+
+            new SummerStep(
+                4,
+                "Xác định phần giữa",
+                "summer-diagram-four",
+                "Chia chiều dài dải chăn thành các phần phù hợp trước khi gấp khối.",
+                new[]
+                {
+                    "Vuốt thẳng dải chăn và xác định vị trí chính giữa.",
+                    "Ước lượng hai phần đầu sao cho khi gấp vào không bị thừa hoặc thiếu.",
+                    "Tạo hai đường nếp vuông góc với cạnh dài.",
+                    "Kiểm tra hai đầu trước khi tiếp tục."
+                },
+                "Dải chăn có hai vị trí gấp rõ ràng, hai phần đầu được chia cân đối."),
+
+            new SummerStep(
+                5,
+                "Gấp hai đầu và khóa mép",
+                "summer-diagram-five",
+                "Gấp hai phần đầu vào lõi và giấu phần mép cuối vào khe gấp.",
+                new[]
+                {
+                    "Gấp đầu thứ nhất phủ lên phần giữa.",
+                    "Ép hai góc của đầu thứ nhất để tạo cạnh vuông.",
+                    "Gấp đầu còn lại phủ lên trên.",
+                    "Luồn vạt cuối vào khe của nếp gấp trước.",
+                    "Vuốt đều từ một góc sang góc còn lại."
+                },
+                "Khối chăn được khóa chắc, vạt cuối không bị bung hoặc lộ ra ngoài."),
+
+            new SummerStep(
+                6,
+                "Vuốt và hoàn thiện",
+                "summer-diagram-six",
+                "Chỉnh mặt, cạnh và bốn góc của khối chăn mùa hè.",
+                new[]
+                {
+                    "Ép nhẹ từ giữa mặt chăn ra bốn phía.",
+                    "Nắn hai cạnh dài cho thẳng và song song.",
+                    "Chỉnh hai cạnh ngắn vuông góc với cạnh dài.",
+                    "Giấu các phần mép còn lộ.",
+                    "Đặt chăn đúng vị trí quy định trên giường."
+                },
+                "Chăn mùa hè có dạng hình chữ nhật, mặt phẳng, góc gọn và giữ được nếp.")
+        };
+
+    private static readonly IReadOnlyList<WinterStep> WinterSteps =
+        new List<WinterStep>
+        {
+            new WinterStep(
+                1,
+                "Trải chăn và đặt khuôn",
+                "/images/noi-vu-mua-dong/buoc-01-trai-chan-dat-khuon.png",
+                "Minh họa trải chăn mùa đông và đặt ba tấm gỗ ở giữa",
+                "Trải toàn bộ chăn thành hình chữ nhật và dùng khuôn gỗ xác định kích thước ban đầu.",
+                new[]
+                {
+                    "Trải chăn trên mặt phẳng sạch và mở hoàn toàn các cạnh.",
+                    "Vuốt từ giữa ra bốn phía để dàn đều phần ruột chăn.",
+                    "Đặt một tấm gỗ lớn ở giữa và hai tấm nhỏ ở hai bên.",
+                    "Căn khuôn nằm ở chính giữa chăn.",
+                    "Kiểm tra khoảng cách từ khuôn đến hai cạnh và hai đầu."
+                },
+                "Chăn phẳng, ruột phân bố đều và khuôn gỗ nằm cân đối ở giữa."),
+
+            new WinterStep(
+                2,
+                "Gấp hai cạnh dài vào trong",
+                "/images/noi-vu-mua-dong/buoc-02-gap-hai-canh-doc.png",
+                "Minh họa gấp hai cạnh dài của chăn vào sát khuôn gỗ",
+                "Thu hẹp chiều ngang của chăn theo hai cạnh dài của khuôn.",
+                new[]
+                {
+                    "Giữ khuôn không dịch chuyển.",
+                    "Gấp cạnh dài bên trái vào sát mép khuôn.",
+                    "Vuốt từ giữa ra hai đầu để hạn chế ruột chăn bị dồn.",
+                    "Gấp cạnh dài bên phải vào sát khuôn.",
+                    "Kiểm tra hai nếp gấp thẳng và có độ dày tương đối bằng nhau."
+                },
+                "Hai cạnh dài được gấp cân đối và song song với nhau."),
+
+            new WinterStep(
+                3,
+                "Gấp hai đầu ngắn theo khuôn",
+                "/images/noi-vu-mua-dong/buoc-03-gap-hai-dau-ngan.png",
+                "Minh họa gấp hai đầu ngắn của chăn về phía khuôn",
+                "Dùng hai cạnh ngắn của khuôn tạo đường gấp vuông góc.",
+                new[]
+                {
+                    "Gấp đầu phía trên xuống sát cạnh trên của khuôn.",
+                    "Gấp đầu phía dưới lên sát cạnh dưới của khuôn.",
+                    "Kéo nhẹ bề mặt vỏ chăn để hạn chế nếp nhăn.",
+                    "Miết dọc theo hai đường gấp.",
+                    "Kiểm tra các cạnh quanh khuôn."
+                },
+                "Bốn phía chăn ôm theo khuôn, hình thành khung chữ nhật."),
+
+            new WinterStep(
+                4,
+                "Rút khuôn và tạo dải chăn",
+                "/images/noi-vu-mua-dong/buoc-04-rut-khuon-tao-dai.png",
+                "Minh họa lấy khuôn gỗ ra và tạo dải chăn dài",
+                "Lấy khuôn tạm thời ra và thu chăn thành một dải dài, chắc.",
+                new[]
+                {
+                    "Giữ nguyên các nếp gấp trong khi rút từng tấm gỗ.",
+                    "Rút nhẹ nhàng, không kéo giật làm bung nếp.",
+                    "Đặt toàn bộ khuôn gỗ sang bên ngoài.",
+                    "Gấp cạnh dài phía trên hướng vào lõi giữa.",
+                    "Gấp cạnh dài phía dưới lên và ép nhẹ."
+                },
+                "Chăn trở thành dải chữ nhật dài và không còn khuôn ở bên trong."),
+
+            new WinterStep(
+                5,
+                "Tạo lõi và chia hai đầu",
+                "/images/noi-vu-mua-dong/buoc-05-gap-hai-dau-vao-loi.png",
+                "Minh họa phần lõi giữa và hai đầu chăn chuẩn bị được gấp vào",
+                "Xác định phần lõi và chia hai đầu trước khi tạo khối.",
+                new[]
+                {
+                    "Vuốt thẳng toàn bộ dải chăn.",
+                    "Xác định phần lõi hình chữ nhật ở chính giữa.",
+                    "Chia phần chăn còn lại ở hai đầu cho cân đối.",
+                    "Ép phần lõi để chiều dày được phân bố đều.",
+                    "Tạo hai đường nếp vuông góc với cạnh dài."
+                },
+                "Phần lõi nằm giữa và hai đầu được chia cân đối."),
+
+            new WinterStep(
+                6,
+                "Gấp đầu thứ nhất và tạo góc",
+                "/images/noi-vu-mua-dong/buoc-06-tao-goc-dau-tien.png",
+                "Minh họa gấp đầu thứ nhất và tạo nếp chéo ở góc",
+                "Xử lý phần vải thừa để đầu thứ nhất có cạnh thẳng và góc vuông.",
+                new[]
+                {
+                    "Gấp đầu thứ nhất phủ lên phần lõi.",
+                    "Giữ đường gấp chính không bị dịch chuyển.",
+                    "Kéo phần vải thừa ở góc và tạo nếp chéo.",
+                    "Gập nếp chéo vào phía trong.",
+                    "Miết cạnh ngang và cạnh đứng để tạo góc."
+                },
+                "Đầu thứ nhất phẳng, chắc và có hai góc tương đối vuông."),
+
+            new WinterStep(
+                7,
+                "Gấp đầu còn lại và khóa mép",
+                "/images/noi-vu-mua-dong/buoc-07-khoa-nep.png",
+                "Minh họa gấp đầu còn lại và luồn vạt vào khe gấp",
+                "Luồn vạt cuối vào khe để khóa chặt khối chăn.",
+                new[]
+                {
+                    "Gấp đầu còn lại phủ lên khối chăn.",
+                    "Nhấc nhẹ mép gấp để tạo khe luồn.",
+                    "Đưa vạt cuối vào khe từ một góc.",
+                    "Luồn dần sang góc còn lại, không nhét dồn vào một điểm.",
+                    "Vuốt và kéo nhẹ hai mép để khóa nếp."
+                },
+                "Vạt cuối nằm trong khe, khối chăn chắc và không tự bung."),
+
+            new WinterStep(
+                8,
+                "Vuốt, ép và hoàn thiện",
+                "/images/noi-vu-mua-dong/buoc-08-hoan-thien.png",
+                "Minh họa chăn mùa đông sau khi hoàn thiện",
+                "Chỉnh lại mặt trên, các cạnh và bốn góc của chăn.",
+                new[]
+                {
+                    "Ép nhẹ từ chính giữa ra các cạnh.",
+                    "Vuốt phẳng mặt trên.",
+                    "Nắn hai cạnh dài cho thẳng.",
+                    "Chỉnh bốn góc và giấu các mép còn lộ.",
+                    "Dịch chuyển nhẹ để kiểm tra khả năng giữ nếp."
+                },
+                "Chăn có dạng hình chữ nhật, mặt phẳng, cạnh thẳng và không bung mép.")
+        };
+
+    private static readonly IReadOnlyList<string> CompletionCriteria =
+        new List<string>
+        {
+            "Khối chăn có dạng hình chữ nhật rõ ràng, không bị xiên hoặc méo.",
+            "Mặt trên tương đối phẳng, ruột chăn không dồn thành cục.",
+            "Bốn góc được chỉnh gọn và có độ chắc cần thiết.",
+            "Hai cạnh dài tương đối thẳng và song song.",
+            "Hai cạnh ngắn tương đối vuông góc với hai cạnh dài.",
+            "Độ dày của khối chăn được phân bố tương đối đồng đều.",
+            "Các vạt và mép thừa được giấu vào trong.",
+            "Không còn khuôn gỗ hoặc dụng cụ trong chăn.",
+            "Khối chăn không tự bung khi được dịch chuyển nhẹ.",
+            "Chăn được đặt đúng vị trí và cùng chiều với các giường khác."
+        };
+
+    private static readonly IReadOnlyList<MistakeItem> CommonMistakes =
+        new List<MistakeItem>
+        {
+            new MistakeItem(
+                "Ruột chăn bị dồn",
+                "Ruột chăn tập trung ở một đầu làm khối chăn có độ dày không đều. Cần dàn ruột chăn trước khi tạo nếp."),
+
+            new MistakeItem(
+                "Hai cạnh bị lệch",
+                "Hai bên không được chia cân đối sẽ làm chăn bị xiên. Cần kiểm tra đường giữa và so sánh hai cạnh trước khi gấp."),
+
+            new MistakeItem(
+                "Góc bị tròn",
+                "Phần vải thừa ở góc chưa được tạo nếp và giấu vào trong. Cần tạo nếp chéo rồi ép lại từng cạnh."),
+
+            new MistakeItem(
+                "Vạt khóa quá lỏng",
+                "Vạt cuối chưa được luồn đủ sâu hoặc bị dồn vào một điểm. Cần luồn đều từ một góc sang góc còn lại."),
+
+            new MistakeItem(
+                "Quên lấy khuôn gỗ",
+                "Khuôn gỗ chỉ dùng để tạo hình. Phải lấy toàn bộ khuôn ra trước khi khóa và hoàn thiện chăn."),
+
+            new MistakeItem(
+                "Đặt chăn không thống nhất",
+                "Chăn đã gấp đẹp nhưng đặt sai chiều hoặc lệch vị trí vẫn làm tổng thể phòng ở thiếu thống nhất.")
+        };
+
+    private sealed class PreparationItem
+    {
+        public PreparationItem(
+            string title,
+            string description)
+        {
+            Title = title;
+            Description = description;
+        }
+
+        public string Title { get; }
+
+        public string Description { get; }
+    }
+
+    private sealed class SummerStep
+    {
+        public SummerStep(
+            int number,
+            string title,
+            string diagramClass,
+            string description,
+            IReadOnlyList<string> instructions,
+            string expectedResult)
+        {
+            Number = number;
+            Title = title;
+            DiagramClass = diagramClass;
+            Description = description;
+            Instructions = instructions;
+            ExpectedResult = expectedResult;
+        }
+
+        public int Number { get; }
+
+        public string Title { get; }
+
+        public string DiagramClass { get; }
+
+        public string Description { get; }
+
+        public IReadOnlyList<string> Instructions { get; }
+
+        public string ExpectedResult { get; }
+    }
+
+    private sealed class WinterStep
+    {
+        public WinterStep(
+            int number,
+            string title,
+            string imageUrl,
+            string imageAlternative,
+            string summary,
+            IReadOnlyList<string> instructions,
+            string expectedResult)
+        {
+            Number = number;
+            Title = title;
+            ImageUrl = imageUrl;
+            ImageAlternative = imageAlternative;
+            Summary = summary;
+            Instructions = instructions;
+            ExpectedResult = expectedResult;
+        }
+
+        public int Number { get; }
+
+        public string Title { get; }
+
+        public string ImageUrl { get; }
+
+        public string ImageAlternative { get; }
+
+        public string Summary { get; }
+
+        public IReadOnlyList<string> Instructions { get; }
+
+        public string ExpectedResult { get; }
+    }
+
+    private sealed class MistakeItem
+    {
+        public MistakeItem(
+            string title,
+            string description)
+        {
+            Title = title;
+            Description = description;
+        }
+
+        public string Title { get; }
+
+        public string Description { get; }
+    }
+}
